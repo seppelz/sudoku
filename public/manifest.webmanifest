@@ -1,0 +1,23 @@
+{
+  "name": "Sudoku für ein klares Denken",
+  "short_name": "Sudoku",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#4f5dff",
+  "background_color": "#ffffff",
+  "description": "Seniorenfreundliches Sudoku mit täglichen Rätseln, barrierefreier Bedienung und großen Schriftgrößen.",
+  "lang": "de-DE",
+  "icons": [
+    {
+      "src": "/sudoku-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/mask-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

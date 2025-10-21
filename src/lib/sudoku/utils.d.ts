@@ -1,0 +1,14 @@
+import seedrandom from 'seedrandom';
+import type { Board, CellValue, Coordinate } from './types';
+export declare const BOARD_SIZE = 9;
+export declare const SUBGRID_SIZE = 3;
+export declare function createEmptyBoard(): Board;
+export declare function cloneBoard(board: Board): Board;
+export declare function isValidPlacement(board: Board, row: number, col: number, value: number): boolean;
+export declare function findEmptyCell(board: Board): Coordinate | null;
+export declare function shuffle<T>(items: T[], rng: seedrandom.PRNG): T[];
+export declare function generateSeedFromDate(date: Date): string;
+export declare function compareBoards(a: Board, b: Board): boolean;
+export declare function collectRow(board: Board, row: number): CellValue[];
+export declare function collectColumn(board: Board, column: number): CellValue[];
+export declare function collectSubgrid(board: Board, row: number, column: number): CellValue[];

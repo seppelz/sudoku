@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-scale: 1;
+    color-scheme: light;
+    font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+    background-color: theme('colors.neutral.50');
+    color: theme('colors.neutral.900');
+    line-height: 1.7;
+    font-size: calc(18px * var(--font-scale));
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    @apply bg-neutral-50 text-neutral-900 antialiased;
+  }
+
+  a {
+    @apply text-brand-700 underline underline-offset-4 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  }
+
+  button {
+    @apply focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  }
+}
+
+@layer utilities {
+  .sr-only-focusable:focus {
+    @apply sr-only not-sr-only absolute top-2 left-2 z-50 rounded-lg bg-brand-700 px-4 py-2 text-lg font-semibold text-white shadow-lg;
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 1px 2px rgba(16, 19, 27, 0.2);
+  }
+}
