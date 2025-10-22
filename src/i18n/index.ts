@@ -66,6 +66,14 @@ void i18n
           helpButtonLabel: 'Spielanleitung öffnen',
           helpDialogTitle: 'Spielanleitung',
           helpDialogIntro: 'So bedienen Sie das Sudoku Schritt für Schritt:',
+          helpDialogRulesTitle: 'Die Sudoku-Regeln',
+          helpDialogRules: [
+            'Füllen Sie jede Zeile so aus, dass jede Zahl von 1 bis 9 genau einmal vorkommt.',
+            'Füllen Sie jede Spalte so aus, dass jede Zahl von 1 bis 9 genau einmal vorkommt.',
+            'Füllen Sie jeden 3×3-Block so aus, dass jede Zahl von 1 bis 9 genau einmal vorkommt.',
+            'Es gibt nur eine gültige Lösung pro Rätsel – vermeiden Sie doppelte Zahlen.',
+          ],
+          helpDialogStepsTitle: 'Bedienung des Spielbretts',
           helpDialogSteps: [
             'Wählen Sie ein Feld mit einem Klick oder den Pfeiltasten aus.',
             'Tragen Sie Zahlen 1–9 per Tastatur oder Eingabefeld ein; mit Entfernen löschen Sie einen Eintrag.',
@@ -83,7 +91,7 @@ void i18n
           footerTitle: 'Sudoku für Senioren',
           footerNavLabel: 'Wichtige Links',
           footerLinks: [
-            { label: 'Zu Aboelo', href: 'https://fitness.aboelo.de/' },
+            { label: 'Zu Aboelo', href: 'https://aboelo.de/' },
             { label: 'Datenschutz', href: 'https://fitness.aboelo.de/datenschutz' },
             { label: 'Impressum', href: 'https://fitness.aboelo.de/impressum' },
             { label: 'Kontakt', href: 'https://fitness.aboelo.de/kontakt' },

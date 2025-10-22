@@ -25,6 +25,7 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
   const helpDialogId = 'help-dialog'
   const helpTitleId = 'help-dialog-title'
   const helpSteps = t('helpDialogSteps', { returnObjects: true }) as string[]
+  const helpRules = t('helpDialogRules', { returnObjects: true }) as string[]
 
   useEffect(() => {
     if (!helpOpen) {
@@ -135,16 +136,36 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
                 {t('helpDialogClose')}
               </button>
             </div>
-            <ul className="mt-4 space-y-2 text-neutral-700">
-              {helpSteps.map((step, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-700">
-                    {index + 1}
-                  </span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-4 space-y-4 text-neutral-700">
+              {helpRules.length > 0 ? (
+                <div>
+                  <h3 className="text-lg font-semibold text-neutral-800">{t('helpDialogRulesTitle')}</h3>
+                  <ul className="mt-2 space-y-2">
+                    {helpRules.map((rule, index) => (
+                      <li key={`rule-${index}`} className="flex items-start gap-3">
+                        <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-700">
+                          {index + 1}
+                        </span>
+                        <span>{rule}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              <div>
+                <h3 className="text-lg font-semibold text-neutral-800">{t('helpDialogStepsTitle')}</h3>
+                <ul className="mt-2 space-y-2">
+                  {helpSteps.map((step, index) => (
+                    <li key={`step-${index}`} className="flex items-start gap-3">
+                      <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-700">
+                        {index + 1}
+                      </span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       ) : null}
