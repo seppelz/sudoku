@@ -43,6 +43,8 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
   }, [fontScale])
   const instructionsId = 'sudoku-instructions'
 
+  const currentYear = new Date().getFullYear()
+
   return (
     <div
       className={clsx(
@@ -51,14 +53,14 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
       )}
     >
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8" style={{ fontSize: `${fontScale}rem` }}>
-        <header className="space-y-3 text-center">
-          <div className="flex items-center justify-center gap-4">
-            <h1 className="text-3xl font-semibold tracking-tight text-shadow-soft sm:text-4xl lg:text-5xl">
+        <header className="rounded-3xl bg-[#2E797C] px-6 py-8 text-center text-white shadow-lg">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               {headline}
             </h1>
             <button
               type="button"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-2xl font-bold text-white shadow-lg transition hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-2xl font-bold text-white shadow-lg transition hover:bg-white/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E797C]"
               aria-haspopup="dialog"
               aria-expanded={helpOpen}
               aria-controls={helpDialogId}
@@ -68,7 +70,7 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
               <span aria-hidden="true">?</span>
             </button>
           </div>
-          <p className="text-lg text-neutral-600 sm:text-xl" aria-live="polite">
+          <p className="mt-4 text-lg text-white/80 sm:text-xl" aria-live="polite">
             {subheadline}
           </p>
         </header>
@@ -82,8 +84,27 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
           </p>
           {children}
         </main>
-        <footer className="rounded-3xl bg-white/70 p-4 text-sm text-neutral-600 backdrop-blur">
-          {t('keyboardHelp')}
+        <footer className="rounded-3xl bg-[#2E797C] px-6 py-6 text-white shadow-lg">
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-base font-semibold">{t('footerTitle')}</span>
+              <nav aria-label={t('footerNavLabel')}>
+                <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
+                  {(t('footerLinks', { returnObjects: true }) as { label: string; href: string }[]).map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-white transition hover:text-white/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+            <div className="text-sm text-white/80">© {currentYear} aboelo.de</div>
+          </div>
         </footer>
       </div>
       {helpOpen ? (
