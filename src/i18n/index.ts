@@ -83,7 +83,7 @@ void i18n
           helpDialogClose: 'Fenster schließen',
           celebrationHeadline: 'Großartig gelöst!',
           celebrationSubtext:
-            'Sie haben das Rätsel erfolgreich abgeschlossen. Gönnen Sie sich einen Moment zum Feiern oder starten Sie ein neues Spiel.',
+            'Sie haben das Rätsel erfolgreich abgieschlossen. Gönnen Sie sich einen Moment zum Feiern oder starten Sie ein neues Spiel.',
           confirmResetTitle: 'Neues Rätsel starten?',
           confirmResetBody: 'Ihre aktuellen Eingaben gehen verloren, wenn Sie fortfahren. Möchten Sie wirklich ein anderes Rätsel öffnen?',
           confirmResetCancel: 'Abbrechen',

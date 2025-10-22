@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import clsx from 'clsx'
 import { useTranslation } from 'react-i18next'
 import { useSudokuStore } from '@/store/useSudokuStore'
-import type { Coordinate } from '@/lib/sudoku/types'
 import { useShallow } from 'zustand/react/shallow'
+import type { Coordinate } from '@/lib/sudoku/types'
 import './SudokuBoard.css'
 
 interface SudokuBoardProps {
@@ -134,7 +134,7 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
             ariaParts.push(t('rowLabel', { row: row + 1 }))
             ariaParts.push(t('columnLabel', { col: col + 1 }))
 
-            const borderClasses = clsx('border-2 border-neutral-200', {
+            const borderClasses = clsx('border-2 border-neutral-200 transition-colors duration-150', {
               'border-l-4 border-neutral-300': col % 3 === 0,
               'border-t-4 border-neutral-300': row % 3 === 0,
               'border-r-4 border-neutral-300': (col + 1) % 3 === 0,
@@ -158,8 +158,10 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
                   borderClasses,
                   {
                     'border-brand-500 bg-brand-50 text-brand-900 shadow-lg': isSelected,
-                    'border-danger bg-danger/10 text-danger': isIncorrect,
-                    'bg-brand-100/70 text-brand-900': isRelated && !isIncorrect && !isSelected,
+                    'border-danger bg-danger/20 text-danger transition-colors duration-150 shadow-md': isIncorrect,
+                    'ring-2 ring-danger/60 ring-offset-2 ring-offset-white': isIncorrect,
+                    'bg-brand-200/60 text-brand-900': isRelated && !isIncorrect && !isSelected,
+                    'border-white bg-danger text-white': highContrast && isIncorrect,
                     'bg-neutral-900 text-white': highContrast && isSelected,
                     'bg-neutral-200 text-neutral-800': highContrast && isRelated && !isSelected,
                     'cursor-default opacity-90': isGiven,
