@@ -83,6 +83,7 @@ void i18n
           footerTitle: 'Sudoku für Senioren',
           footerNavLabel: 'Wichtige Links',
           footerLinks: [
+            { label: 'Zu Aboelo', href: 'https://fitness.aboelo.de/' },
             { label: 'Datenschutz', href: 'https://fitness.aboelo.de/datenschutz' },
             { label: 'Impressum', href: 'https://fitness.aboelo.de/impressum' },
             { label: 'Kontakt', href: 'https://fitness.aboelo.de/kontakt' },

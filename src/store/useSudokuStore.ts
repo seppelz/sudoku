@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist, createJSONStorage } from 'zustand/middleware'
 import type { SudokuPuzzle, Board, Coordinate, Difficulty, NotesGrid, Hint } from '../lib/sudoku/types'
 import { createEmptyBoard, cloneBoard } from '../lib/sudoku/utils'
 import { findIncorrectCells, isBoardComplete, isBoardValid } from '../lib/sudoku/validation'
@@ -65,7 +66,11 @@ const createSeedRandom = (seed?: string) => {
   return seedrandom()
 }
 
-export const useSudokuStore = create<SudokuState>((set, get) => ({
+const STORAGE_KEY = 'sudoku-progress'
+
+export const useSudokuStore = create<SudokuState>()(
+  persist(
+    (set, get) => ({
   puzzle: null,
   currentBoard: createEmptyBoard(),
   notes: initialNotes(),
@@ -321,4 +326,15 @@ export const useSudokuStore = create<SudokuState>((set, get) => ({
       get().newRandomPuzzle(difficulty)
     }
   },
-}))
+    }),
+    {
+      name: STORAGE_KEY,
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) =>
+        ({
+          completedPuzzles: state.completedPuzzles,
+          completionHistory: state.completionHistory,
+        }) satisfies Pick<SudokuState, 'completedPuzzles' | 'completionHistory'>,
+    },
+  ),
+)
