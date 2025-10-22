@@ -3,10 +3,8 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
 
-const repositoryBase = process.env.VITE_REPO_BASE ?? ''
-
-export default defineConfig(({ command }) => ({
-  base: command === 'build' ? repositoryBase || '/' : '/',
+export default defineConfig({
+  base: '/',
   plugins: [
     react(),
     VitePWA({
@@ -42,4 +40,4 @@ export default defineConfig(({ command }) => ({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-}))
+})

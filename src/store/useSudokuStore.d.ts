@@ -17,6 +17,7 @@ export interface SudokuState {
     difficulty: Difficulty;
     completedPuzzles: string[];
     completionHistory: CompletionRecord[];
+    hasUserInput: boolean;
     newRandomPuzzle: (difficulty?: Difficulty) => void;
     loadDailyPuzzle: (difficulty?: Difficulty) => void;
     setCellValue: (coordinate: Coordinate, value: number | null) => void;
@@ -38,5 +39,17 @@ interface CompletionRecord {
     difficulty: Difficulty;
     completedAt: string;
 }
-export declare const useSudokuStore: import("zustand").UseBoundStore<import("zustand").StoreApi<SudokuState>>;
+export declare const useSudokuStore: import("zustand").UseBoundStore<Omit<import("zustand").StoreApi<SudokuState>, "setState" | "persist"> & {
+    setState(partial: SudokuState | Partial<SudokuState> | ((state: SudokuState) => SudokuState | Partial<SudokuState>), replace?: false | undefined): unknown;
+    setState(state: SudokuState | ((state: SudokuState) => SudokuState), replace: true): unknown;
+    persist: {
+        setOptions: (options: Partial<import("zustand/middleware").PersistOptions<SudokuState, unknown, unknown>>) => void;
+        clearStorage: () => void;
+        rehydrate: () => Promise<void> | void;
+        hasHydrated: () => boolean;
+        onHydrate: (fn: (state: SudokuState) => void) => () => void;
+        onFinishHydration: (fn: (state: SudokuState) => void) => () => void;
+        getOptions: () => Partial<import("zustand/middleware").PersistOptions<SudokuState, unknown, unknown>>;
+    };
+}>;
 export {};

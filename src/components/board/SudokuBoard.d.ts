@@ -1,3 +1,4 @@
+import './SudokuBoard.css';
 interface SudokuBoardProps {
     loading: boolean;
 }
