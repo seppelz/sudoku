@@ -43,7 +43,11 @@ export function MobileSettingsMenu() {
   }
 
   const handleNewGame = () => {
-    mode === 'daily' ? loadDailyPuzzle(difficulty) : newRandomPuzzle(difficulty)
+    if (mode === 'daily') {
+      loadDailyPuzzle(difficulty)
+    } else {
+      newRandomPuzzle(difficulty)
+    }
     setIsOpen(false)
   }
 
