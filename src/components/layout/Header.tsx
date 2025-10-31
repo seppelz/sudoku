@@ -11,22 +11,22 @@ export function Header() {
 
   return (
     <header className="bg-white shadow-md">
-      <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-2 py-2 sm:px-6 sm:py-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <img
               src="/aboeloLogo.png"
               alt="Aboelo Logo"
-              className="h-10 w-auto sm:h-12"
+              className="h-8 w-auto sm:h-12"
             />
-            <span className="text-xl font-semibold text-neutral-900 sm:text-2xl">
+            <span className="text-lg font-semibold text-neutral-900 sm:text-2xl">
               Sudoku
             </span>
           </div>
 
-          {/* Navigation */}
-          <nav aria-label={t('mainNavLabel', 'Main navigation')}>
+          {/* Navigation - Hidden on small mobile, visible on larger screens */}
+          <nav aria-label={t('mainNavLabel', 'Main navigation')} className="hidden sm:block">
             <ul className="flex flex-wrap items-center gap-4 sm:gap-6">
               {navItems.map((item) => (
                 <li key={item.href}>

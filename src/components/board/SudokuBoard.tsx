@@ -76,7 +76,7 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
   }, [incorrectCells])
 
   const containerClasses = clsx(
-    'relative overflow-hidden rounded-3xl border border-neutral-200 bg-white/90 p-4 shadow-panel backdrop-blur',
+    'relative overflow-hidden rounded-3xl border border-neutral-200 bg-white/90 p-2 sm:p-4 shadow-panel backdrop-blur',
     highContrast && 'border-neutral-900 bg-white text-black',
   )
 
@@ -117,7 +117,7 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
       {renderConfetti ? (
         <CelebrationOverlay message={t('celebrationHeadline')} subtext={t('celebrationSubtext')} pieces={confettiPieces} />
       ) : null}
-      <div role="grid" aria-label={t('boardLabel')} className="grid grid-cols-9 gap-2" data-testid="sudoku-board">
+      <div role="grid" aria-label={t('boardLabel')} className="grid grid-cols-9 gap-1 sm:gap-2" data-testid="sudoku-board">
         {gridIndices.map((row) =>
           gridIndices.map((col) => {
             const value = currentBoard[row][col]
@@ -134,11 +134,11 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
             ariaParts.push(t('rowLabel', { row: row + 1 }))
             ariaParts.push(t('columnLabel', { col: col + 1 }))
 
-            const borderClasses = clsx('border-2 border-neutral-200 transition-colors duration-150', {
-              'border-l-4 border-neutral-300': col % 3 === 0,
-              'border-t-4 border-neutral-300': row % 3 === 0,
-              'border-r-4 border-neutral-300': (col + 1) % 3 === 0,
-              'border-b-4 border-neutral-300': (row + 1) % 3 === 0,
+            const borderClasses = clsx('border border-neutral-200 sm:border-2 transition-colors duration-150', {
+              'border-l-2 sm:border-l-4 border-neutral-300': col % 3 === 0,
+              'border-t-2 sm:border-t-4 border-neutral-300': row % 3 === 0,
+              'border-r-2 sm:border-r-4 border-neutral-300': (col + 1) % 3 === 0,
+              'border-b-2 sm:border-b-4 border-neutral-300': (row + 1) % 3 === 0,
             })
 
             return (
@@ -153,18 +153,18 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
                 disabled={isGiven}
                 tabIndex={isSelected ? 0 : -1}
                 className={clsx(
-                  'relative flex aspect-square items-center justify-center rounded-2xl text-3xl font-semibold transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-white',
+                  'relative flex aspect-square items-center justify-center rounded-lg sm:rounded-2xl text-xl sm:text-3xl font-semibold transition focus-visible:outline-none focus-visible:ring-2 sm:focus-visible:ring-4 focus-visible:ring-brand-300 focus-visible:ring-offset-1 sm:focus-visible:ring-offset-2 focus-visible:ring-offset-white',
                   'bg-white text-neutral-900',
                   borderClasses,
                   {
-                    'border-brand-700 bg-brand-100 text-brand-900 shadow-lg ring-4 ring-brand-400/80 ring-offset-4 ring-offset-white': isSelected,
+                    'border-brand-700 bg-brand-100 text-brand-900 shadow-lg ring-2 sm:ring-4 ring-brand-400/80 ring-offset-2 sm:ring-offset-4 ring-offset-white': isSelected,
                     'border-danger bg-danger/20 text-danger transition-colors duration-150 shadow-md': isIncorrect,
-                    'ring-2 ring-danger/60 ring-offset-2 ring-offset-white': isIncorrect,
-                    'bg-brand-200/60 text-brand-900 outline outline-2 outline-brand-400/70':
+                    'ring-1 sm:ring-2 ring-danger/60 ring-offset-1 sm:ring-offset-2 ring-offset-white': isIncorrect,
+                    'bg-brand-200/60 text-brand-900 outline outline-1 sm:outline-2 outline-brand-400/70':
                       isRelated && !isIncorrect && !isSelected,
                     'border-white bg-danger text-white': highContrast && isIncorrect,
-                    'bg-neutral-900 text-white ring-4 ring-yellow-300 ring-offset-4 ring-offset-neutral-900': highContrast && isSelected,
-                    'bg-neutral-200 text-neutral-800 outline outline-2 outline-neutral-500/80':
+                    'bg-neutral-900 text-white ring-2 sm:ring-4 ring-yellow-300 ring-offset-2 sm:ring-offset-4 ring-offset-neutral-900': highContrast && isSelected,
+                    'bg-neutral-200 text-neutral-800 outline outline-1 sm:outline-2 outline-neutral-500/80':
                       highContrast && isRelated && !isSelected,
                     'cursor-default opacity-90': isGiven,
                   },
@@ -173,7 +173,7 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
                 {value !== null ? (
                   <span className="text-shadow-soft">{value}</span>
                 ) : noteValues.length > 0 ? (
-                  <span className="grid w-full grid-cols-3 gap-x-1 gap-y-0.5 text-xs font-medium leading-4 text-neutral-500">
+                  <span className="grid w-full grid-cols-3 gap-x-0.5 gap-y-0 text-[0.5rem] sm:text-xs font-medium leading-3 sm:leading-4 text-neutral-500">
                     {noteValues.map((note) => (
                       <span key={note} className="text-center">
                         {note}
@@ -188,7 +188,7 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
           }),
         )}
       </div>
-      <div className="mt-4 rounded-2xl border border-neutral-200 bg-white/80 p-3 text-sm text-neutral-600">
+      <div className="mt-4 hidden rounded-2xl border border-neutral-200 bg-white/80 p-3 text-sm text-neutral-600 sm:block">
         <p>{t('boardInstructions')}</p>
       </div>
     </div>

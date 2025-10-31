@@ -54,15 +54,15 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
       )}
     >
       <Header />
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8" style={{ fontSize: `${fontScale}rem` }}>
-        <div className="rounded-3xl bg-[#2E797C] px-6 py-8 text-center text-white shadow-lg">
-          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-2 py-4 sm:gap-8 sm:px-6 sm:py-10 lg:px-8" style={{ fontSize: `${fontScale}rem` }}>
+        <div className="rounded-3xl bg-[#2E797C] px-4 py-4 text-center text-white shadow-lg sm:px-6 sm:py-8">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-4">
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               {headline}
             </h1>
             <button
               type="button"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-2xl font-bold text-white shadow-lg transition hover:bg-white/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E797C]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-xl font-bold text-white shadow-lg transition hover:bg-white/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2E797C] sm:h-12 sm:w-12 sm:text-2xl"
               aria-haspopup="dialog"
               aria-expanded={helpOpen}
               aria-controls={helpDialogId}
@@ -72,16 +72,16 @@ export function AppShell({ headline, subheadline, instructions, ariaLabel, child
               <span aria-hidden="true">?</span>
             </button>
           </div>
-          <p className="mt-4 text-lg text-white/80 sm:text-xl" aria-live="polite">
+          <p className="mt-2 text-base text-white/80 sm:mt-4 sm:text-xl" aria-live="polite">
             {subheadline}
           </p>
         </div>
         <main
-          className="rounded-3xl bg-white/90 p-4 shadow-panel backdrop-blur md:p-8"
+          className="rounded-3xl bg-white/90 p-2 shadow-panel backdrop-blur sm:p-4 md:p-8"
           aria-label={ariaLabel}
           aria-describedby={instructionsId}
         >
-          <p id={instructionsId} className="mb-6 text-base text-neutral-700">
+          <p id={instructionsId} className="mb-6 hidden text-base text-neutral-700 sm:block">
             {instructions}
           </p>
           {children}
