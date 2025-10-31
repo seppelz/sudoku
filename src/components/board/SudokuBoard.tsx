@@ -157,13 +157,13 @@ export function SudokuBoard({ loading }: SudokuBoardProps) {
                   'bg-white text-neutral-900',
                   borderClasses,
                   {
-                    'border-brand-500 bg-brand-50 text-brand-900 shadow-lg': isSelected,
+                    'border-brand-700 bg-brand-100 text-brand-900 shadow-lg ring-4 ring-brand-400/80 ring-offset-4 ring-offset-white': isSelected,
                     'border-danger bg-danger/20 text-danger transition-colors duration-150 shadow-md': isIncorrect,
                     'ring-2 ring-danger/60 ring-offset-2 ring-offset-white': isIncorrect,
                     'bg-brand-200/60 text-brand-900 outline outline-2 outline-brand-400/70':
                       isRelated && !isIncorrect && !isSelected,
                     'border-white bg-danger text-white': highContrast && isIncorrect,
-                    'bg-neutral-900 text-white': highContrast && isSelected,
+                    'bg-neutral-900 text-white ring-4 ring-yellow-300 ring-offset-4 ring-offset-neutral-900': highContrast && isSelected,
                     'bg-neutral-200 text-neutral-800 outline outline-2 outline-neutral-500/80':
                       highContrast && isRelated && !isSelected,
                     'cursor-default opacity-90': isGiven,
