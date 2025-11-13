@@ -11,7 +11,6 @@ import { ControlPanel } from './components/panel/ControlPanel'
 import { MobileNumberPad } from './components/panel/MobileNumberPad'
 import { MobileSettingsMenu } from './components/panel/MobileSettingsMenu'
 import { Announcement } from './components/a11y/Announcement'
-import { AdsPlaceholder } from './components/ads/AdsPlaceholder'
 import { DailyStatus } from './components/panel/DailyStatus'
 
 function App() {
@@ -65,7 +64,6 @@ function App() {
           </div>
           <div className="space-y-6">
             <ControlPanel />
-            <AdsPlaceholder />
           </div>
         </div>
         <Announcement />

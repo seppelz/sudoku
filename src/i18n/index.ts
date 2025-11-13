@@ -28,8 +28,6 @@ void i18n
           fontSizeNormal: 'Normal',
           fontSizeLarge: 'Groß',
           fontSizeExtra: 'Sehr groß',
-          adsPlaceholderTitle: 'Werbefläche',
-          adsPlaceholderBody: 'Hier können Sie nach Eingabe Ihrer AdSense-IDs Werbung platzieren.',
           statistics: 'Fortschritt',
           emptyStatistics: 'Noch keine gelösten Rätsel. Viel Freude beim Spielen!',
           puzzleComplete: 'Ausgezeichnet! Sie haben das Rätsel gelöst.',
@@ -55,8 +53,6 @@ void i18n
           clearAction: 'Eingabe löschen',
           hintAction: 'Hinweis eintragen',
           hintDescription: 'Hilft beim nächsten leeren Feld.',
-          adsInfo:
-            'Hinterlegen Sie Ihre Google AdSense Client- und Slot-IDs in der Datei .env, um hier Werbung zu schalten.',
           statisticsSolved: 'Gelöste Rätsel',
           statisticsPlaceholder: 'Lösungen werden hier angezeigt, sobald Sie ein Rätsel abgeschlossen haben.',
           selectedDifficulty: 'Aktuelle Stufe: {{difficulty}}',
