@@ -12,6 +12,7 @@ import { MobileNumberPad } from './components/panel/MobileNumberPad'
 import { MobileSettingsMenu } from './components/panel/MobileSettingsMenu'
 import { Announcement } from './components/a11y/Announcement'
 import { DailyStatus } from './components/panel/DailyStatus'
+import { CookieBanner, CookieConsentSync } from './components/layout/CookieBanner'
 
 function App() {
   const { t } = useTranslation()
@@ -33,6 +34,8 @@ function App() {
 
   return (
     <Suspense fallback={<div className="p-6 text-lg">{t('loading')}</div>}>
+      <CookieConsentSync />
+      <CookieBanner />
       <RotatePrompt />
       <MobileSettingsMenu />
       <a href="#main" className="sr-only sr-only-focusable">

@@ -12,6 +12,29 @@
     />
     <link rel="manifest" href="/manifest.webmanifest" />
     <title>Sudoku für ein klares Denken</title>
+    <!-- Google Consent Mode defaults (must run before gtag.js) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        personalization_storage: 'denied',
+        security_storage: 'granted',
+        wait_for_update: 500,
+      });
+    </script>
+    <!-- Keep id in sync with src/analytics/measurementId.ts -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKLD5Q4SP3"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-LKLD5Q4SP3');
+    </script>
   </head>
   <body>
     <div id="root"></div>
