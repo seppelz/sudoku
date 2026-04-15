@@ -2,6 +2,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
+    { label: 'Über aboelo', href: 'https://aboelo.de/ueber-uns/' },
     { label: 'Impressum', href: 'https://aboelo.de/impressum' },
     { label: 'Datenschutz', href: 'https://aboelo.de/datenschutz' },
   ]
