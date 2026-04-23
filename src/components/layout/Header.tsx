@@ -15,11 +15,13 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
           <div className="flex items-center gap-2 sm:gap-4">
-            <img
-              src="/aboeloLogo.png"
-              alt="Aboelo Logo"
-              className="h-8 w-auto sm:h-12"
-            />
+            <a href="https://aboelo.de" className="flex-shrink-0">
+              <img
+                src="/aboeloLogo.png"
+                alt="Aboelo Logo"
+                className="h-8 w-auto sm:h-12"
+              />
+            </a>
             <span className="text-lg font-semibold text-neutral-900 sm:text-2xl">
               Sudoku
             </span>
