@@ -8,7 +8,7 @@ import {
   type StoredCookieConsent,
 } from '@/analytics/consent'
 
-const PRIVACY_HREF = 'https://aboelo.de/datenschutz'
+const PRIVACY_HREF = 'https://aboelo.de/datenschutzerklaerung'
 
 export function CookieConsentSync() {
   useEffect(() => {

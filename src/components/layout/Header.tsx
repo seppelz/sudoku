@@ -23,6 +23,7 @@ export function Header() {
   const appsLinks = [
     { label: 'Digital', href: 'https://digital.aboelo.de' },
     { label: 'Fitness', href: 'https://fitness.aboelo.de' },
+    { label: 'Quiz', href: 'https://quiz.aboelo.de' },
     { label: 'Sudoku', href: 'https://sudoku.aboelo.de' },
     { label: 'Post', href: 'https://post.aboelo.de' },
     { label: 'Senioren-Rechner', href: 'https://aboelo.de/senioren-rechner' },
@@ -43,11 +44,10 @@ export function Header() {
                   <a
                     key={app.href}
                     href={app.href}
-                    className={`inline-flex items-center gap-1 font-semibold transition-colors ${
-                      isCurrent
+                    className={`inline-flex items-center gap-1 font-semibold transition-colors ${isCurrent
                         ? 'text-[#086b6a] cursor-default'
                         : 'text-[#086b6a] hover:text-teal-900 opacity-80 hover:opacity-100'
-                    }`}
+                      }`}
                     {...(!isCurrent ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {app.label}
