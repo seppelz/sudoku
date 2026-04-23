@@ -29,12 +29,6 @@ export function Header() {
     { label: 'Hilfsmittel-Finder', href: 'https://hilfsmittel.aboelo.de' },
   ]
 
-  const navItems = [
-    { label: 'Zu Aboelo', href: 'https://aboelo.de' },
-    { label: 'Fitness', href: 'https://fitness.aboelo.de' },
-    { label: 'Hilfsmittel-Finder', href: 'https://hilfsmittel.aboelo.de' },
-  ]
-
   return (
     <header className="bg-white shadow-md">
       {/* Top App Bar */}
@@ -81,24 +75,6 @@ export function Header() {
               Sudoku
             </span>
           </div>
-
-          {/* Navigation - Hidden on small mobile, visible on larger screens */}
-          <nav aria-label={t('mainNavLabel', 'Main navigation')} className="hidden sm:block">
-            <ul className="flex flex-wrap items-center gap-4 sm:gap-6">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-sm font-medium text-neutral-700 transition hover:text-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 sm:text-base"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
         </div>
       </div>
     </header>
