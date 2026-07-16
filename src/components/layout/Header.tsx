@@ -21,13 +21,13 @@ export function Header() {
   const { t } = useTranslation()
 
   const appsLinks = [
-    { label: 'Digital', href: 'https://digital.aboelo.de' },
-    { label: 'Fitness', href: 'https://fitness.aboelo.de' },
-    { label: 'Quiz', href: 'https://quiz.aboelo.de' },
-    { label: 'Sudoku', href: 'https://sudoku.aboelo.de' },
-    { label: 'Post', href: 'https://post.aboelo.de' },
-    { label: 'Senioren-Rechner', href: 'https://aboelo.de/senioren-rechner' },
-    { label: 'Hilfsmittel-Finder', href: 'https://hilfsmittel.aboelo.de' },
+    { label: 'Digital', href: 'https://aboelo.de/digital/' },
+    { label: 'Fitness', href: 'https://aboelo.de/fitness/' },
+    { label: 'Quiz', href: 'https://aboelo.de/quiz/' },
+    { label: 'Sudoku', href: 'https://aboelo.de/sudoku/' },
+    { label: 'Post', href: 'https://aboelo.de/post/' },
+    { label: 'Senioren-Rechner', href: 'https://aboelo.de/senioren-rechner/' },
+    { label: 'Hilfsmittel-Finder', href: 'https://aboelo.de/hilfsmittel/' },
   ]
 
   return (

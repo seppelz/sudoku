@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
-  base: '/',
+  base: '/sudoku/',
   plugins: [
     react(),
     VitePWA({
@@ -17,7 +17,7 @@ export default defineConfig({
         theme_color: '#4f5dff',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
+        start_url: '/sudoku/',
         lang: 'de-DE',
         icons: [
           {
