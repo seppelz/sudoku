@@ -1,8 +1,6 @@
-import { useTranslation } from 'react-i18next'
 import { AboeloGlobalHeader } from './AboeloGlobalHeader'
 
 export function Header() {
-  const { t } = useTranslation()
 
   return (
     <>
@@ -19,5 +17,6 @@ export function Header() {
         </div>
       </div>
     </header>
+    </>
   )
 }
