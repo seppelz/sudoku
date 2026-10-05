@@ -69,7 +69,6 @@ const MENU_DATA = [
       { label: 'Verhinderungspflege', href: 'https://aboelo.de/pflege-betreuung/verhinderungspflege/' },
       { label: 'Pflegeberatung', href: 'https://aboelo.de/pflege-betreuung/pflegeberatung/' },
       { label: 'Pflegeantrag & Pflegegrad', href: 'https://aboelo.de/pflegeantrag/' },
-      { label: 'Pflegegrad-Rechner', href: 'https://aboelo.de/pflegegrad-rechner/' },
       { label: 'Pflegekosten-Rechner', href: 'https://aboelo.de/pflegekosten-rechner/' },
     ]
   },
@@ -78,7 +77,7 @@ const MENU_DATA = [
     href: 'https://aboelo.de/gesundheit-fitness/',
     items: [
       { label: 'Hilfsmittel finden', href: 'https://aboelo.de/hilfsmittel/' },
-      { label: 'Fitness für Senioren App', href: 'https://aboelo.de/fitness/' },
+      { label: 'Fitness für Senioren App', href: 'https://aboelo.de/fitness' },
       { label: 'Digital Quiz', href: 'https://aboelo.de/quiz/' },
       { label: 'Digitale Kompetenz', href: 'https://aboelo.de/digital/' },
       { label: 'Sudoku spielen', href: 'https://aboelo.de/sudoku/' },
@@ -92,7 +91,6 @@ const MENU_DATA = [
     items: [
       { label: 'Erbrecht', href: 'https://aboelo.de/finanzen-recht/erben-erbschaft-erbschaftsrecht/' },
       { label: 'Pflegerecht', href: 'https://aboelo.de/finanzen-recht/pflegerecht/' },
-      { label: 'Rentenlücke-Rechner', href: 'https://aboelo.de/rentenlueckenrechner/' },
     ]
   }
 ];

@@ -3,8 +3,8 @@ export function Footer() {
 
   const footerLinks = [
     { label: 'Über aboelo', href: 'https://aboelo.de/ueber-uns/' },
-    { label: 'Impressum', href: 'https://aboelo.de/impressum' },
-    { label: 'Datenschutz', href: 'https://aboelo.de/datenschutzerklaerung' },
+    { label: 'Impressum', href: 'https://aboelo.de/impressum/' },
+    { label: 'Datenschutz', href: 'https://aboelo.de/datenschutzerklaerung/' },
   ]
 
   return (
